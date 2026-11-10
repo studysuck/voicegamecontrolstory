@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101522" />
+    <title>Whispers of Asteria</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Whispers of Asteria home">
+          <span class="brand-mark">✦</span>
+          <span>Whispers of Asteria</span>
+        </a>
+        <div class="topbar-actions">
+          <button class="icon-button" id="sound-toggle" type="button" aria-label="Mute narration" title="Mute narration">◖</button>
+          <button class="restart-button" id="restart-button" type="button">Restart story</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="eyebrow"><span class="eyebrow-line"></span> A voice-controlled adventure <span class="eyebrow-line"></span></div>
+        <h1>Whispers of <em>Asteria</em></h1>
+        <p class="hero-copy">The old lighthouse is calling. Speak your choice and shape the legend.</p>
+        <div class="progress-wrap" aria-label="Story progress">
+          <div class="progress-label"><span id="chapter-label">CHAPTER 01</span><span id="progress-label">THE CALLING</span></div>
+          <div class="progress-track"><div class="progress-bar" id="progress-bar"></div></div>
+        </div>
+      </section>
+
+      <section class="game-layout">
+        <article class="story-card">
+          <div class="story-card-header">
+            <span class="location-tag"><span class="location-dot"></span><span id="location-label">The Shoreline</span></span>
+            <span class="scene-count" id="scene-count">1 / 4</span>
+          </div>
+          <div class="story-content">
+            <div class="scene-kicker" id="scene-kicker">THE NIGHT THE STARS WENT OUT</div>
+            <h2 id="scene-title">A light beneath the waves</h2>
+            <p class="story-text" id="story-text"></p>
+          </div>
+          <div class="story-footer">
+            <div class="narration-status">
+              <span class="pulse-dot" id="narration-dot"></span>
+              <span id="narration-label">Narration ready</span>
+            </div>
+            <button class="listen-button" id="listen-button" type="button"><span>▶</span> Listen again</button>
+          </div>
+        </article>
+
+        <aside class="choice-panel">
+          <div class="choice-heading">
+            <span class="eyebrow">YOUR MOVE</span>
+            <h3>What do you say?</h3>
+            <p>Speak a choice, or tap one below.</p>
+          </div>
+          <div class="choices" id="choices"></div>
+          <div class="voice-box" id="voice-box">
+            <div class="voice-orb" id="voice-orb"><span>⌁</span></div>
+            <div class="voice-copy">
+              <strong id="voice-title">Listening for your voice</strong>
+              <span id="voice-hint">Press the microphone, then say your choice</span>
+            </div>
+            <button class="mic-button" id="mic-button" type="button" aria-label="Start voice choice" title="Start voice choice">●</button>
+          </div>
+          <div class="heard-row" aria-live="polite">
+            <span>HEARD</span>
+            <strong id="heard-text">—</strong>
+          </div>
+          <div class="typed-choice">
+            <label for="choice-input">Or type a choice</label>
+            <div class="typed-row">
+              <input id="choice-input" type="text" placeholder="e.g. Follow the light" autocomplete="off" />
+              <button id="submit-typed" type="button">Go</button>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="site-footer">
+        <span>Built for brave voices</span>
+        <span class="footer-divider">•</span>
+        <span>Tip: your microphone works best in Chrome or Edge</span>
+      </footer>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
